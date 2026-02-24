@@ -1,0 +1,56 @@
+<ion-header>
+<ion-toolbar>
+
+  <ion-button slot="start">
+    <ion-menu-button>
+
+    </ion-menu-button>
+
+
+  </ion-button>
+
+  <ion-title>Lugares</ion-title>
+  
+  <ion-buttons slot="end" >
+    <ion-button routerLink="/lugares-form">
+      <ion-icon name="add-circle-outline" slot="icon-only"></ion-icon>
+    </ion-button>
+
+    <ion-icon name="add"></ion-icon>
+
+
+  </ion-buttons>
+</ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+<ion-refresher slot="fixed" (ionRefresh)="cargar($event)">
+  <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+<ion-card class="card"  *ngFor="let l of lugares" (click)="ver(l.id!)">
+
+  <ion-item lines="none">
+    <ion-avatar slot="start"> 
+    <img [src]=" l.fotos?.[0]?.pathLocal || 'assets/hola.jpg'"> 
+
+    
+    </ion-avatar>
+<ion-label>  
+    <h2>{{l.titulo}}</h2>
+    <p>{{l.categoria}} || {{l.fecha}}</p>
+
+</ion-label>
+<ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
+
+  </ion-item>
+  <ion-card-content>
+  <p> {{l.descripcion}}</p>
+  <ion-chip>
+    <ion-label>{{l.fotos?.length || 0}} fotos</ion-label>
+  </ion-chip>
+  </ion-card-content>
+</ion-card>
+
+
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "ProyectoMovilGeo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

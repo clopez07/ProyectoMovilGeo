@@ -1,0 +1,14 @@
+{
+    "Lugares": [
+        {
+            "id": 1,
+            "titulo": "Parque Central",
+            "descripcion": "Salida de amigos.",
+            "fecha": "2026-02-16",
+            "latitud": 40.7128,
+            "longitud": -74.0060,
+            "categoria": "Turismo",
+            "fotos": []
+        }
+    ]
+}  
