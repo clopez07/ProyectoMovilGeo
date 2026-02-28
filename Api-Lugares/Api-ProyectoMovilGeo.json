@@ -1,14 +1,46 @@
 {
-    "Lugares": [
+  "Lugares": [
+    {
+      "id": "1",
+      "titulo": "Parque Central",
+      "descripcion": "Salida de amigos.",
+      "fecha": "2026-02-16",
+      "latitud": 40.7128,
+      "longitud": -74.006,
+      "categoria": "Turismo",
+      "fotos": []
+    },
+    {
+      "id": "9233",
+      "titulo": "VIsita en Tela",
+      "descripcion": "Vacaciones relajantes",
+      "fecha": "2026-02-28",
+      "lat": 13.319246286003015,
+      "lng": -87.20986938662261,
+      "categoria": "Turismo",
+      "fotos": [
         {
-            "id": 1,
-            "titulo": "Parque Central",
-            "descripcion": "Salida de amigos.",
-            "fecha": "2026-02-16",
-            "latitud": 40.7128,
-            "longitud": -74.0060,
-            "categoria": "Turismo",
-            "fotos": []
+          "idLocal": "IMG_1772250360428",
+          "pathLocal": "/DATA/IMG_1772250360428.jpeg",
+          "createdAt": "Sat, 28 Feb 2026 03:46:00 GMT"
         }
-    ]
-}  
+      ]
+    },
+    {
+      "id": "344a",
+      "titulo": "Pollos del Olimpo",
+      "descripcion": "Salida",
+      "fecha": "2026-03-01",
+      "lat": 13.319202098991406,
+      "lng": -87.20980120246676,
+      "categoria": "Restaurante",
+      "fotos": [
+        {
+          "idLocal": "IMG_1772250843769",
+          "pathLocal": "/DATA/IMG_1772250843769.jpeg",
+          "createdAt": "Sat, 28 Feb 2026 03:54:03 GMT"
+        }
+      ]
+    }
+  ]
+}
