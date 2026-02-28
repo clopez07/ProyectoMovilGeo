@@ -38,4 +38,11 @@ export class FotosLocal {
     return {idLocal, pathLocal, createdAt: new Date().toUTCString()};
   }
 
+  async borrarFoto(idLocal: string): Promise<void> {
+    const fileName = `${idLocal}.jpeg`;
+    await Filesystem.deleteFile({
+      path: fileName,
+      directory: Directory.Data
+    });
+  }
 }
