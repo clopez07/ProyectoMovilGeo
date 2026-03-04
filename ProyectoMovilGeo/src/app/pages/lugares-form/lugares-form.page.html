@@ -1,108 +1,62 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/lugares-lista"></ion-back-button>
+      <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Nuevo Lugar</ion-title>
-    <ion-buttons slot="end">
-      <ion-button (click)="guardar()" [disabled]="!formValido()">
-        <ion-icon name="checkmark" slot="icon-only"></ion-icon>
-      </ion-button>
-    </ion-buttons>
+    <ion-title>{{id ? 'Editar' : 'Nuevo'}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
+<ion-card class="card">
+  <ion-card-header>
+    <ion-card-title>Datos</ion-card-title>
+    </ion-card-header>
+  <ion-card-content>
+    <ion-item>
+      <ion-label position="stacked">Título</ion-label>
+      <ion-input [(ngModel)]="lugar.titulo"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Descripción</ion-label>
+      <ion-textarea [(ngModel)]="lugar.descripcion"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Fecha</ion-label>
+      <ion-input type="date" [(ngModel)]="lugar.fecha"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Categorias</ion-label>
+      <ion-select [(ngModel)]="lugar.categoria">
+        <ion-select-option value="Turismo">Turismo</ion-select-option>
+        <ion-select-option value="Comida">Comida</ion-select-option>
+        <ion-select-option value="Cultura">Cultura</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Latitud</ion-label>
+      <ion-input [(ngModel)]="lugar.lat" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Longitud</ion-label>
+      <ion-input [(ngModel)]="lugar.lng" type="number"></ion-input>
+    </ion-item>
+
   
-  <ion-item>
-    <ion-input 
-      label="Título" 
-      labelPlacement="floating" 
-      placeholder="Nombre del lugar"
-      [(ngModel)]="lugar.titulo">
-    </ion-input>
-  </ion-item>
 
-  <ion-item>
-    <ion-textarea 
-      label="Descripción" 
-      labelPlacement="floating" 
-      placeholder="Describe tu experiencia"
-      [(ngModel)]="lugar.descripcion"
-      [autoGrow]="true"
-      rows="3">
-    </ion-textarea>
-  </ion-item>
+  <ion-button>
+  <ion-icon name="save" slot="start"></ion-icon>
+  Usar Ubicacion
 
-  <ion-item>
-    <ion-input 
-      label="Fecha" 
-      labelPlacement="floating" 
-      type="date"
-      [(ngModel)]="lugar.fecha">
-    </ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-select 
-      label="Categoría" 
-      labelPlacement="floating" 
-      placeholder="Selecciona una categoría"
-      [(ngModel)]="lugar.categoria">
-      <ion-select-option value="Turismo">Turismo</ion-select-option>
-      <ion-select-option value="Restaurante">Restaurante</ion-select-option>
-      <ion-select-option value="Evento">Evento</ion-select-option>
-      <ion-select-option value="Naturaleza">Naturaleza</ion-select-option>
-      <ion-select-option value="Trabajo">Trabajo</ion-select-option>
-      <ion-select-option value="Otro">Otro</ion-select-option>
-    </ion-select>
-  </ion-item>
-
-  <ion-item-divider>
-    <ion-label>Ubicación</ion-label>
-  </ion-item-divider>
-
-  <ion-item>
-    <ion-input 
-      label="Latitud" 
-      labelPlacement="floating" 
-      type="number"
-      [(ngModel)]="lugar.lat"
-      readonly>
-    </ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-input 
-      label="Longitud" 
-      labelPlacement="floating" 
-      type="number"
-      [(ngModel)]="lugar.lng"
-      readonly>
-    </ion-input>
-  </ion-item>
-
-  <ion-button expand="block" fill="outline" (click)="obtenerUbicacion()">
-    <ion-icon name="location" slot="start"></ion-icon>
-    Obtener ubicación actual
   </ion-button>
 
-  <ion-item-divider>
-    <ion-label>Fotos</ion-label>
-  </ion-item-divider>
+  </ion-card-content>
+  </ion-card>
 
-  <div class="fotos-grid">
-    <div class="foto-item" *ngFor="let foto of lugar.fotos; let i = index">
-      <img [src]="foto.pathLocal" alt="Foto del lugar">
-      <ion-button fill="clear" color="danger" (click)="eliminarFoto(i)">
-        <ion-icon name="trash" slot="icon-only"></ion-icon>
-      </ion-button>
-    </div>
-  </div>
-
-  <ion-button expand="block" fill="outline" (click)="tomarFoto()">
-    <ion-icon name="camera" slot="start"></ion-icon>
-    Tomar foto
-  </ion-button>
-
-</ion-content>
+  </ion-content>
+  
+  

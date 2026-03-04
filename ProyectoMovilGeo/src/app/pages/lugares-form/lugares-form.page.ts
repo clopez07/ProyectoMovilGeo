@@ -71,7 +71,29 @@ export class LugaresFormPage implements OnInit {
         color: 'danger'
       })).present();
     }
-    //Crear constante para guardar.
+//Crear constante para guardar.
+const a = await this.alert.create({
+        header: 'Confirmar',
+        message: '¿Deseas guardar este lugar?',
+        buttons: [
+          {
+            text: 'Cancelar',
+            role: 'cancel'
+          },
+          {
+            text: 'Si',
+      handler:()=>{
+        if(this.id) {
+          this.api.update(this.id, this.lugar).subscribe(() => this.nav.back());
+        }else {
+          this.api.create(this.lugar).subscribe((creado) =>  this.nav.navigateRoot(`/lugares-detalle/${creado.id}`));
+        }
+          }
+          }
+        ]
+      });
+      await a.present();
+    
 
 }
 }
