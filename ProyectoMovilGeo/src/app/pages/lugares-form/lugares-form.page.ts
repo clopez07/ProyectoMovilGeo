@@ -3,8 +3,6 @@ import { LugaresApi } from 'src/app/services/lugares-api';
 import { GeoService } from 'src/app/services/geo.service';
 import { Lugar } from 'src/app/models/lugares.models';
 import { AlertController, NavController, ToastController } from '@ionic/angular';
-import { FotosLocal } from 'src/app/services/fotos-local';
-import { CameraSource } from '@capacitor/camera';
 import { ActivatedRoute } from '@angular/router';
 
 
@@ -16,7 +14,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class LugaresFormPage implements OnInit {
 
-  id!: number;
+  id?: number;
 
   lugar: Lugar = {
     titulo: '',

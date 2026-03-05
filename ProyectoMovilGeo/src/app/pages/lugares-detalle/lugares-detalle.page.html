@@ -4,10 +4,10 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">lugares-detalle</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding" *ngIf="lugar">
+  <ion-card class="card">
+    <ion-card-header>
+      <ion-card-title>{{ lugar.titulo }}</ion-card-title>
+    </ion-card-header>
+  </ion-card>
 </ion-content>
